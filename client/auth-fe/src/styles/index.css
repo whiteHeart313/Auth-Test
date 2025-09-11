@@ -1,0 +1,440 @@
+@import url("./_fonts.css");
+
+/* 
+================
+  Tailwind CSS
+================
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	.dir-rtl {
+		direction: rtl;
+	}
+
+	.dir-ltr {
+		direction: ltr;
+	}
+
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 0 0% 3.9%;
+
+		--muted: 0 0% 96.1%;
+		--muted-foreground: 0 0% 45.1%;
+
+		--popover: 0 0% 100%;
+		--popover-foreground: 0 0% 3.9%;
+
+		--border: 0 0% 89.8%;
+		--input: 0 0% 89.8%;
+
+		--card: 0 0% 100%;
+		--card-foreground: 0 0% 3.9%;
+
+		--primary: 0 0% 9%;
+		--primary-foreground: 0 0% 98%;
+
+		--secondary: 0 0% 96.1%;
+		--secondary-foreground: 0 0% 9%;
+
+		--accent: 0 0% 96.1%;
+		--accent-foreground: 0 0% 9%;
+
+		--destructive: 0 84.2% 60.2%;
+		--destructive-foreground: 0 0% 98%;
+
+		--ring: 0 0% 3.9%;
+
+		--radius: 0.5rem;
+
+		--chart-1: 12 76% 61%;
+
+		--chart-2: 173 58% 39%;
+
+		--chart-3: 197 37% 24%;
+
+		--chart-4: 43 74% 66%;
+
+		--chart-5: 27 87% 67%;
+	}
+
+	.dark {
+		--background: 0 0% 3.9%;
+		--foreground: 0 0% 98%;
+
+		--card: 0 0% 3.9%;
+		--card-foreground: 0 0% 98%;
+
+		--popover: 0 0% 3.9%;
+		--popover-foreground: 0 0% 98%;
+
+		--primary: 0 0% 98%;
+		--primary-foreground: 0 0% 9%;
+
+		--secondary: 0 0% 14.9%;
+		--secondary-foreground: 0 0% 98%;
+
+		--muted: 0 0% 14.9%;
+		--muted-foreground: 0 0% 63.9%;
+
+		--accent: 0 0% 14.9%;
+		--accent-foreground: 0 0% 98%;
+
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 0 0% 98%;
+
+		--border: 0 0% 14.9%;
+		--input: 0 0% 14.9%;
+		--ring: 0 0% 83.1%;
+		--chart-1: 220 70% 50%;
+		--chart-2: 160 60% 45%;
+		--chart-3: 30 80% 55%;
+		--chart-4: 280 65% 60%;
+		--chart-5: 340 75% 55%;
+
+		--sidebar-background: 240 5.9% 10%;
+		--sidebar-foreground: 240 4.8% 95.9%;
+
+		--sidebar-primary: 224.3 76.3% 48%;
+		--sidebar-primary-foreground: 0 0% 100%;
+
+		--sidebar-accent: 240 3.7% 15.9%;
+		--sidebar-accent-foreground: 240 4.8% 95.9%;
+
+		--sidebar-border: 240 3.7% 15.9%;
+		--sidebar-ring: 240 4.9% 83.9%;
+	}
+
+	[data-radix-popper-content-wrapper] {
+		@apply !z-[999999];
+	}
+}
+
+@layer base {
+	.container {
+		@apply mx-auto px-4;
+	}
+
+	@media screen and (min-width: 640px) {
+		.container {
+			@apply max-w-2xl;
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		.container {
+			@apply max-w-3xl;
+		}
+	}
+
+	@media screen and (min-width: 1024px) {
+		.container {
+			@apply max-w-4xl;
+		}
+	}
+
+	@media screen and (min-width: 1280px) {
+		.container {
+			@apply max-w-5xl;
+		}
+	}
+}
+
+@layer components {
+	.custom-scrollbar::-webkit-scrollbar {
+		@apply h-[6px] w-2;
+	}
+
+	.custom-scrollbar::-webkit-scrollbar-track {
+		@apply rounded-full bg-[#E7E7E9];
+	}
+
+	.custom-scrollbar::-webkit-scrollbar-thumb {
+		@apply rounded-full bg-secondary-200;
+	}
+
+	.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+		@apply bg-secondary-300;
+	}
+}
+
+@layer utilities {
+	.break-word {
+		word-break: break-word;
+	}
+
+	.break-all {
+		word-break: break-all;
+	}
+
+	span.mention {
+		@apply relative !z-[99999] mx-[1px] my-0 inline-block cursor-pointer select-all whitespace-nowrap rounded-md bg-primary-100 px-[0.25rem] py-[0.125rem] text-primary-600;
+	}
+
+	span.message-mention {
+		@apply !z-[99999] rounded-md bg-muted/10 px-1 font-semibold text-primary-500;
+	}
+	span.message-mention.me {
+		@apply !text-primary-300;
+	}
+}
+
+/* 
+================
+  Global Styles
+================
+*/
+
+* {
+	@apply custom-scrollbar;
+	font-family: "DMSans", "Tajawal", sans-serif !important;
+}
+
+body {
+	font-weight: 500;
+}
+
+hr {
+	@apply my-4 border-t border-[#E7E7E9];
+}
+
+.rtl {
+	direction: rtl;
+}
+
+.ltr {
+	direction: ltr;
+}
+
+@media print {
+	div {
+		break-inside: avoid;
+	}
+}
+
+/* 
+================
+  Custom Styles
+================
+*/
+
+#Teeth_Chart g:not(#Numbers_1, #Numbers_2) {
+	pointer-events: bounding-box;
+}
+
+#Teeth_Chart g:not(#Numbers_1, #Numbers_2):hover {
+	@apply fill-primary-700;
+}
+
+/* 
+================
+  rc-progress
+================
+*/
+
+.rhap_controls-section {
+	@apply !mr-0 flex-none;
+}
+
+.rhap_time {
+	@apply text-body-xs text-white;
+}
+
+.rhap_progress-bar {
+	@apply h-[3px];
+}
+
+.rhap_progress-indicator {
+	@apply -top-[4px] h-3 w-3 bg-white shadow-none;
+}
+
+.rhap_container svg {
+	@apply text-white;
+}
+
+/* 
+====================
+  React Tel Input
+====================
+*/
+
+.flag-dropdown {
+	@apply !bg-[#F9FAFB];
+}
+
+.flag-dropdown,
+.react-tel-input .selected-flag,
+.react-tel-input .flag-dropdown.open .selected-flag {
+	@apply !rounded-bl-[7px] !rounded-tl-[7px];
+}
+
+.react-tel-input .country-list {
+	@apply fixed;
+}
+
+/* 
+====================
+  PrimeReact Styles
+====================
+*/
+.p-checkbox .p-checkbox-box {
+	@apply border border-[#DEDFE3];
+}
+
+.p-checkbox .p-checkbox-box.p-highlight {
+	@apply border-primary-600 bg-primary-600;
+}
+
+.p-datatable .p-datatable-tbody > tr.p-highlight {
+	@apply bg-primary-200 text-primary-600;
+}
+
+.p-datatable {
+	@apply w-max !overflow-visible rounded-xl border border-[#E7E7E9] bg-white p-2 lg:w-full [&_table]:border-separate [&_tbody_tr:not(:last-child)_td]:border-b [&_tbody_tr:not(:last-child)_td]:border-[#DEDFE3] [&_td]:text-body-sm [&_td]:font-medium [&_td]:text-secondary-600 [&_th]:text-secondary-300 [&_th_span]:text-body-sm [&_th_span]:font-medium [&_thead]:text-secondary-100 [&_thead_th:first-child]:rounded-bl-md [&_thead_th:first-child]:rounded-tl-md [&_thead_th:first-child]:border-l [&_thead_th:last-child]:rounded-br-md [&_thead_th:last-child]:rounded-tr-md [&_thead_th:last-child]:border-r [&_thead_th]:border-b [&_thead_th]:border-t [&_thead_th]:border-secondary-100 [&_thead_th]:py-3;
+}
+
+.p-datatable tr:last-child .table-row-options,
+.p-datatable tr:nth-last-child(2) .table-row-options {
+	@apply bottom-6 top-[unset];
+}
+
+.p-datatable-wrapper {
+	@apply custom-scrollbar;
+}
+
+.p-paginator {
+	@apply mt-3 bg-transparent p-0;
+}
+
+.p-dropdown.p-component.p-inputwrapper.p-inputwrapper-filled {
+	@apply mr-auto;
+}
+
+.p-paginator-prev,
+.p-paginator-next {
+	@apply mx-1 h-8 w-8 min-w-[unset] rounded-md bg-white text-paragraph;
+}
+
+.p-paginator-page {
+	@apply mx-1 h-8 w-8 min-w-[unset] rounded-md;
+}
+
+.p-highlight {
+	@apply bg-primary-600 text-white;
+}
+
+.p-dropdown {
+	@apply bg-transparent text-paragraph;
+}
+
+.p-dropdown-label,
+.p-dropdown-trigger {
+	@apply text-paragraph;
+}
+
+.p-paginator-pages {
+	@apply text-secondary-700;
+}
+
+.p-dialog-header-close {
+	@apply h-8 w-8 rounded-md bg-[#F4F4F4] p-2 text-secondary-700;
+}
+
+.p-dialog .p-dialog-header {
+	@apply rounded-tl-lg rounded-tr-lg border-b border-[#E7E7E9] py-4;
+}
+
+.p-dialog-title {
+	@apply text-body-lg font-medium text-secondary-700;
+}
+
+.p-dialog .p-dialog-content:last-of-type {
+	@apply rounded-bl-lg rounded-br-lg;
+}
+
+.p-dialog-content {
+	@apply px-6 pb-8 pt-3;
+}
+
+.p-datatable-loading-overlay {
+	@apply text-white;
+}
+
+.p-dialog-mask {
+	@apply !z-[999];
+}
+
+.p-multiselect-chip {
+	@apply border border-[#CACED8];
+}
+
+.p-multiselect-label {
+	@apply text-body-xs;
+}
+
+.p-dropdown,
+.p-calendar {
+	@apply rounded-[7px] border border-[#CACED8];
+}
+
+.p-inputtext {
+	@apply h-10 rounded-[7px] px-3 py-2 text-body-sm;
+}
+
+.p-dropdown-label {
+	@apply h-10 py-2 text-body-sm;
+}
+
+.p-dropdown-item {
+	@apply py-2 text-body-sm;
+}
+
+.p-paginator.p-component .p-dropdown {
+	@apply h-11;
+}
+
+.p-tooltip-text {
+	@apply bg-secondary-700 py-2 text-body-xs;
+}
+
+.p-tooltip .p-tooltip-text {
+	@apply shadow;
+}
+
+.select-doctors.p-inputwrapper-filled .p-dropdown-label {
+	@apply pb-0 pt-1;
+}
+
+[data-rmiz-modal-overlay="visible"] {
+	@apply bg-[rgba(0,0,0,0.8)];
+}
+
+.case-qr .p-dialog-header {
+	@apply hidden;
+}
+
+.case-qr .p-dialog-content,
+.case-qr {
+	@apply !rounded-3xl !p-0;
+}
+
+.case-qr .p-dialog-content {
+	@apply !p-3;
+}
+
+.p-dropdown-header {
+	@apply p-3;
+}
+
+.p-dropdown-filter {
+	@apply h-10 border border-[#E7E7E9] px-2;
+}
+
+.p-datepicker-title {
+	@apply flex items-center gap-1;
+}
+
