@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { ACCESS_TOKEN_COOKIE_NAME } from "@/utils/constants.util";
-import { loginAPI, signUpAPI } from "@/api/auth.api";
+import { signUpAPI } from "@/api/auth.api";
 import Button from "@/shared/Button";
 import { useUser } from "@/context/UserContext";
 // Components
