@@ -2,7 +2,7 @@
 import clsx from "clsx";
 import { Outlet, useMatches } from "react-router-dom";
 
-import Logo from "@/assets/media/svg/Logo.svg";
+import Logo from "@/assets/media/svg/logo.svg";
 
 const AuthLayout = () => {
 	const matches = useMatches();
