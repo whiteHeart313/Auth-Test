@@ -14,7 +14,7 @@ This repository contains a security scanning system with a NestJS backend, React
 1. Clone the repository (if you haven't already):
    ```bash
    git clone <repository-url>
-   cd easyGenerator
+   cd Auth-Test
    ```
 
 2. Build and start all services using Docker Compose:
