@@ -14,7 +14,7 @@ import { JwtStrategy } from './strategies/jwt.strategy';
       secret: 'your-secret-key', // In production, use environment variables
       signOptions: { expiresIn: '1h' },
     }),
-    MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
+    MongooseModule.forFeature([{ name: User.name, schema: UserSchema }], 'auth'),
   ],
   controllers: [AuthController],
   providers: [AuthService, JwtStrategy],
