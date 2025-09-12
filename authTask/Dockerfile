@@ -5,6 +5,7 @@ WORKDIR /app
 COPY package*.json ./
 
 RUN yarn install
+RUN yarn add class-validator class-transformer
 
 COPY . .
 
