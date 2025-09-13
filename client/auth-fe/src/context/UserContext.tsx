@@ -2,10 +2,9 @@ import { createContext, useContext, useState, useEffect, type ReactNode } from '
 
 interface User {
   id?: string;
-  name?: string;
-  email?: string;
-  role?: string;
-  [key: string]: any; // For any additional user properties
+  name: string;
+  email: string;
+  [key: string]: any; 
 }
 
 interface UserContextType {
@@ -22,7 +21,6 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUserState] = useState<User | null>(null);
   const [isNewLogin, setIsNewLogin] = useState<boolean>(false);
 
-  // Load user data from localStorage on initial render
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
     const storedNewLogin = localStorage.getItem('newLogin');
@@ -41,7 +39,6 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     }
   }, []);
 
-  // Set user data in state and localStorage
   const setUser = (userData: User | null) => {
     setUserState(userData);
     
@@ -52,13 +49,12 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  // Set new login status in state and localStorage
   const setNewLogin = (isNew: boolean) => {
     setIsNewLogin(isNew);
     localStorage.setItem('newLogin', isNew ? 'true' : 'false');
   };
 
-  // Clear user data from state and localStorage
+  
   const clearUser = () => {
     setUserState(null);
     setIsNewLogin(false);
