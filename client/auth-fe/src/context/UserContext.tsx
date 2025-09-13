@@ -60,7 +60,6 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     setIsNewLogin(false);
     localStorage.removeItem('user');
     localStorage.removeItem('newLogin');
-    localStorage.removeItem('role');
   };
 
   return (
