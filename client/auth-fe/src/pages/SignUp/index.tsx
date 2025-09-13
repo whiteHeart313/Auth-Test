@@ -28,15 +28,13 @@ const SignUp =  ()=> {
     const { mutate, isPending } = useMutation({
 		mutationKey: ["signUp"],
 		mutationFn: ({ name, email, pass }: { name: string; email: string; pass: string }) => signUpAPI(name, email, pass),
-		onSuccess: (data : { data: { accessToken: string; user: { role: string } } }) => {
+		onSuccess: (data : { data: { accessToken: string; user: { name: string; email: string } } }) => {
 			Cookies.set(ACCESS_TOKEN_COOKIE_NAME, data.data.accessToken, {
 				expires: 5
 			});
-
 			// Use UserContext to manage user data
 			setUser(data.data.user);
 			setNewLogin(true);
-			localStorage.setItem("role", data.data?.user?.role || "");
 
 			toast.success("Sign up successfully | Redirecting... 🚀");
 			navigate("/");

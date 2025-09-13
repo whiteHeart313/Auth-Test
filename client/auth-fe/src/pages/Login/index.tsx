@@ -35,9 +35,12 @@ const Login = () => {
 
 			setUser(data.data.user);
 			setNewLogin(true);
-
 			toast.success("Logged in successfully | Redirecting... 🚀");
-			navigate("/");
+			// for fun 
+			setTimeout(() => {
+				navigate("/");
+			}, 1000);
+			
 		}
 	});
 
@@ -45,7 +48,11 @@ const Login = () => {
 		e.preventDefault();
 
 		const { error } = loginSchema.validate(formData);
-		if (error) return toast.error(error.message);
+		if (error) {
+			console.log(`this is the error message ${error.message}`)
+			toast.error(error.message);
+			return ;
+		}
         mutate({
 			email: formData.email,
 			pass: formData.password
