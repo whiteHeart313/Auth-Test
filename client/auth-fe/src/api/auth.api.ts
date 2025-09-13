@@ -2,7 +2,7 @@ import api from ".";
 
 export const loginAPI = async (email: string, password: string) => {
 	return (
-		await api().post(`/v1/auth/login`, {
+		await api().post(`/auth/login`, {
 			email,
 			password
 		})
@@ -10,7 +10,7 @@ export const loginAPI = async (email: string, password: string) => {
 };
 export const signUpAPI = async (name: string, email: string, password: string) => {
 	return (
-		await api().post(`/v1/auth/signup`, {
+		await api().post(`/auth/signup`, {
 			name,
 			email,
 			password
@@ -18,9 +18,9 @@ export const signUpAPI = async (name: string, email: string, password: string) =
 	).data;
 }
 export const getNewAccessTokenAPI = async () => {
-	return (await api().post(`/v1/auth/refresh-token`)).data;
+	return (await api().post(`/auth/refresh-token`)).data;
 };
 
 export const getUserByTokenAPI = async () => {
-	return (await api().get(`/v1/auth/get-user`)).data;
+	return (await api().get(`/auth/get-user`)).data;
 };
