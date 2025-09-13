@@ -33,7 +33,6 @@ const Login = () => {
 				expires: 5
 			});
 
-			// Use UserContext to manage user data
 			setUser(data.data.user);
 			setNewLogin(true);
 
