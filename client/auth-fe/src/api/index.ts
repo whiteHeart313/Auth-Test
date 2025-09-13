@@ -25,9 +25,9 @@ const api = () => {
 				const data = error.response.data as { message: string };
 				
 				if (status === 401) {
-					// Unauthorized - clear token and redirect to login
 					toast.error(data?.message || "Session expired. Please login again.");
 					Cookies.remove(ACCESS_TOKEN_COOKIE_NAME);
+					window.location.href = "/auth/login";
 				} else if (status === 403) {
 					toast.error(data?.message || "You don't have permission to perform this action.");
 				} else {
