@@ -1,7 +1,6 @@
 # Auth System - Docker Setup
 
-## Overview
-This repository contains a security scanning system with a NestJS backend, React frontend, and MongoDB database. The entire application can be run using Docker containers.
+
 
 ## Prerequisites
 - Docker and Docker Compose installed on your system
